@@ -48,7 +48,7 @@ usersRoute.post("/login", async (req, res) => {
                         }
                         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
                         res.header("Access-Control-Allow-Credentials", true);
-                        res.cookie("refreshToken", refreshToken, { maxAge: 1000*60*60*24*20, httpOnly: false, secure: false }).status(200).send({ msg: "Login Success", user: userObj });
+                        res.cookie("refreshToken", refreshToken, { maxAge: 1000*60*60*24*20, httpOnly: false,sameSite:"none", secure: false }).status(200).send({ msg: "Login Success", user: userObj });
                   }else{
                         res.status(400).send({ msg: "Invalid Username or Password" });
                   }
