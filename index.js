@@ -16,7 +16,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
-    origin: "*",
+    origin: ["https://amazon-shoping.netlify.app/", "http://localhost:3000"],
     credentials: true,  //access-control-allow-credentials:true  
     optionsSuccessStatus: 200 // This line should be optionsSuccessStatus instead of optionSuccessStatus
 }));
