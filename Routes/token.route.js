@@ -8,6 +8,7 @@ tokenRoute.get("/", (req, res) => {
     let x = 1;
     const refreshToken = req.cookies.refreshToken
     console.log("token refrshed")
+    console.log("refreshToken", refreshToken)
 
     if (!refreshToken) {
         // console.log("object")
