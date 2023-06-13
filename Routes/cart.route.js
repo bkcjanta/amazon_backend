@@ -30,8 +30,8 @@ cartRoute.post("/", async (req, res) => {
         if (cartData.length) {
 
             const qty = +(cartData[0].quantity) + +quantity;
-            console.log("qty", qty)
-            newCarrdata = await cartModel.update({ productID: _id }, { $set: { quantity: qty } })
+            console.log("qty", qty);
+            newCarrdata = await cartModel.updateOne({ productID: _id }, { $set: { quantity: qty } })
 
         } else {
             const cart = new cartModel({ userID: userID, productID: _id, image, title, mrp, price, category, rating, review, quantity });
