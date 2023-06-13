@@ -7,7 +7,7 @@ const { generateAccessToken, generateRefreshToken } = require('../Middlewares/ge
 tokenRoute.get("/", (req, res) => {
     let x = 1;
     const refreshToken = req.cookies.refreshToken
-    // console.log(refreshToken)
+    console.log("token refrshed")
 
     if (!refreshToken) {
         // console.log("object")
