@@ -16,10 +16,10 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
-    origin: ["http://localhost:3000", "https://thoughtful-colt-cuff.cyclic.app"],
-    credentials: true,
-    optionSuccessStatus: 200,      //access-control-allow-credentials:true  
-}))
+    origin: "*",
+    credentials: true,  //access-control-allow-credentials:true  
+    optionsSuccessStatus: 200 // This line should be optionsSuccessStatus instead of optionSuccessStatus
+}));
 
 app.get("/", (req, res) => {
     res.send("hello world");
