@@ -67,7 +67,9 @@ usersRoute.post("/login", async (req, res) => {
 // logout route remove cookie
 
 usersRoute.get("/logout", (req, res) => {
-      res.clearCookie("refreshToken").status(200).send({ msg: "Logout Success" });
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      res.header("Access-Control-Allow-Credentials", true);
+      res.cookie("refreshToken", "", { maxAge: 0, httpOnly: true, sameSite: "none", secure: true }).status(200).send({ msg: "Logout Success" });
       res.end();
 });
                              
