@@ -61,9 +61,14 @@ usersRoute.post("/login", async (req, res) => {
             res.status(400).send({ msg: err.message });
       }
 
-    
 })
 
+
+// logout route remove cookie
+
+usersRoute.get("/logout", (req, res) => {
+      res.clearCookie("refreshToken").send({ msg: "Logout Success" });
+});
                              
 
 
